@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charging System Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="tesla-theme">
+    <div class="container">
+        <h1 class="title">Welcome to the Charging System</h1>
+        <p class="subtitle">Please choose an authentication method:</p>
+        <div class="button-container">
+            <button id="manualAuthBtn" class="auth-button">Manually Enter Account</button>
+            <button id="qrAuthBtn" class="auth-button">Scan QR Code</button>
+        </div>
+    </div>
+
+    <div id="manualAuth" class="auth-container hidden">
+        <input type="text" id="accountInput" class="input-field" placeholder="Enter Account Number">
+        <input type="password" id="pinInput" class="input-field" placeholder="Enter PIN">
+        <button id="submitAuthBtn" class="submit-button">Submit</button>
+    </div>
+
+    <div id="vehicleTypeContainer" class="hidden">
+    <label for="vehicleType" class="label">Choose Vehicle Type:</label>
+    <select id="vehicleType" class="select">
+        <option value="car">Car</option>
+        <option value="e-bike">E-Bike</option>
+        <option value="e-scooter">E-Scooter</option>
+    </select>
+</div>
+
+<div id="chargingBayContainer" class="hidden">
+    <label for="chargingBay" class="label">Choose Charging Bay:</label>
+    <select id="chargingBay" class="select">
+        <option value="1">Bay 1</option>
+        <option value="2">Bay 2</option>
+        <!-- Add more options for charging bays -->
+    </select>
+</div>
+
+<div id="chargeDurationContainer" class="hidden">
+    <label for="chargeDuration" class="label">Choose Charge Duration:</label>
+    <select id="chargeDuration" class="select">
+        <!-- Options for charge duration based on vehicle type will be dynamically populated -->
+    </select>
+</div>
+
+<div id="paymentDetailsContainer" class="hidden">
+    <p class="payment-label">Payment Details:</p>
+    <div class="payment-options">
+        <input type="radio" id="onAccount" name="paymentMethod" value="onAccount" class="radio">
+        <label for="onAccount" class="payment-label">On Account</label><br>
+        <input type="radio" id="contactlessCard" name="paymentMethod" value="contactlessCard" class="radio">
+        <label for="contactlessCard" class="payment-label">Contactless Card Interaction</label><br>
+    </div>
+</div>
+
+<div id="chargingDetails" class="hidden">
+    <h2 class="charging-header">Charging Details</h2>
+    <div class="button-container">
+        <button id="submitChargeBtn" class="submit-button">Start Charging</button>
+        <button id="cancelChargeBtn" class="cancel-button">Cancel Charging</button>
+    </div>
+</div>
+
+<div id="chargingStatus" class="hidden">
+    <!-- Display charging status here -->
+</div>
+
+
+    <div id="errorContainer" class="error hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
